@@ -19,6 +19,12 @@ public enum CGLineJoin: Int32 {
 public class CGPath {
 }
 
+extension CGPath: Equatable {
+    public static func == (lhs: CGPath, rhs: CGPath) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+}
+
 public class CGMutablePath: CGPath {
     
 }
