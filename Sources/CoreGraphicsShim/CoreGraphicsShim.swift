@@ -1,7 +1,17 @@
-#if os(Linux)
+#if canImport(Foundation)
 import Foundation
 #else
-// import CoreGraphics
+public func ceil(_ value: Double) -> Double {
+    if value == Double(Int(value)) {
+        return value
+    } else {
+        return Double(Int(value + 1.0))
+    }
+}
+
+public func floor(_ value: Double) -> Double {
+    return Double(Int(value))
+}
 #endif
 
 public enum CGLineCap: Int32 {
